@@ -1,0 +1,14 @@
+<form action="<%= url %>" method="POST">
+    <div class="field">
+      <label class="label">Name</label>
+      <div class="control">
+        <input class="input" type="text" name="checklist[name]" placeholder="Lista de Tarefas" value="<%= checklist.name %>" required>
+        <% if(checklist.error && checklist.error.hasOwnProperty('name')) { %>
+          <p class="is-danger help"><%= checklist.error.name.message %></p>
+        <% } %>
+      </div>
+    </div>
+
+    <button type="submit" class="button is-success">Save</button>
+    <a href="/checklists" class="button">Cancel</a>
+</form>
