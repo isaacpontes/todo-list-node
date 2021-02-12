@@ -15,9 +15,9 @@ Simple todo-list application built as a very basic Node.js + Express + MongoDB t
 To run you need to have MongoDB installed and running on your machine. Don't have it? Get it [here](https://docs.mongodb.com/manual/installation/).
 Once you have your MongoDB service running you can simply do:
 
-```S git clone git@github.com:isaacpontes/to-do-list-node.git```
+```$ git clone git@github.com:isaacpontes/to-do-list-node.git```
 
-```S cd to-do-list-node```
+```$ cd to-do-list-node```
 
-```S npm install && npm run dev```
+```$ npm install && npm run dev```
 
