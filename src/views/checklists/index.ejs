@@ -2,14 +2,14 @@
 
 <%- include('../layouts/menu') %>
 
-<section class="section has-background-light">
+<section class="section">
     <div class="container">
       <div class="columns">
         <div class="column is-four-fifths">
           <h1 class="title size-4">All Checklists</h1>
         </div>
         <div class="column is-one-fifth">
-          <a href="/checklists/new" class="button is-success is-small">New List</a>
+          <a href="/checklists/new" class="button is-link is-small">New List</a>
         </div>
       </div>
 
@@ -22,7 +22,7 @@
                   <%= checklist.name %>
                 </p>
                 <p class="subtitle is-size-6">
-                  <%= checklist.tasks.count %> tarefas
+                  <%= checklist.tasks.length %> tasks
                 </p>
               </div>
               <footer class="card-footer">

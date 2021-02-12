@@ -1,0 +1,15 @@
+.has-min-height-full {
+    min-height: 100vh;
+}
+
+.main-card {
+    margin: 0 auto;
+    max-width: 640px;
+    padding: 3em;
+}
+
+.is-done {
+    color: hsl(0, 0%, 60%);
+    font-style: italic;
+    text-decoration: line-through;
+}

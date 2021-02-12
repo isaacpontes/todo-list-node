@@ -20,15 +20,6 @@ router.get('/new', async (req, res) => {
     }
 });
 
-router.get('/:id/edit', async (req, res) => {
-    try {
-        const checklist = await Checklist.findById(req.params.id);
-        res.status(200).render('checklists/edit', { checklist: checklist });
-    } catch (error) {
-        res.status(500).render('pages/error', { error: 'Error loading form.' });
-    }
-});
-
 router.post('/', async (req, res) => {
     const { name } = req.body.checklist;
     const checklist = new Checklist({ name });
@@ -42,10 +33,19 @@ router.post('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
     try {
-        const checklist = await Checklist.findById(req.params.id);
+        const checklist = await Checklist.findById(req.params.id).populate('tasks');
         res.status(200).render('checklists/show', { checklist: checklist });
     } catch (error) {
         res.status(500).render('pages/error', { error: 'Error getting checklist.' });
+    }
+});
+
+router.get('/:id/edit', async (req, res) => {
+    try {
+        const checklist = await Checklist.findById(req.params.id);
+        res.status(200).render('checklists/edit', { checklist: checklist });
+    } catch (error) {
+        res.status(500).render('pages/error', { error: 'Error loading form.' });
     }
 });
 

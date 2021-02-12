@@ -2,7 +2,7 @@
     <div class="field">
       <label class="label">Name</label>
       <div class="control">
-        <input class="input" type="text" name="checklist[name]" placeholder="Lista de Tarefas" value="<%= checklist.name %>" required>
+        <input class="input" type="text" name="checklist[name]" placeholder="Ex.: Things to study" value="<%= checklist.name %>" required autofocus>
         <% if(checklist.error && checklist.error.hasOwnProperty('name')) { %>
           <p class="is-danger help"><%= checklist.error.name.message %></p>
         <% } %>

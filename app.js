@@ -3,6 +3,7 @@ const methodOverride = require('method-override');
 const path = require('path');
 const indexRouter = require('./src/routes/index');
 const checklistRouter = require('./src/routes/checklist');
+const taskRouter = require('./src/routes/task');
 
 require('./config/database');
 
@@ -17,6 +18,8 @@ app.set('view engine', 'ejs');
 
 app.use('/', indexRouter);
 app.use('/checklists', checklistRouter);
+app.use('/checklists', taskRouter.dependent);
+app.use('/tasks', taskRouter.simple);
 
 app.listen(3000, () => {
     console.log('Server started.');
