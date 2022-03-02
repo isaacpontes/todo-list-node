@@ -5,6 +5,7 @@ const indexRouter = require('./src/routes/index');
 const checklistRouter = require('./src/routes/checklist');
 const taskRouter = require('./src/routes/task');
 
+require('dotenv').config();
 require('./config/database');
 
 const app = express();
